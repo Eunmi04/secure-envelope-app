@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from '@/components/Navbar'
+import Providers from '@/components/Providers'
 
 export const metadata: Metadata = {
   title: 'Secure Envelope App',
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <Navbar />
-        <main className="max-w-5xl mx-auto p-6">{children}</main>
+        <Providers>
+          <Navbar />
+          <main className="max-w-5xl mx-auto p-6">{children}</main>
+        </Providers>
       </body>
     </html>
   )
